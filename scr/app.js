@@ -5,25 +5,25 @@ app.use(express.json());
 
 let personagens = [
     {   
-        id: 1,
+        
         playerName: "Sayra",
         name: "Silky",
         classe: "patruleiro",
         nvl: 5,
     },
-    {   id: 2,
+    {   
         playerName: "Vinicius",
         name: "Maco",
         classe: "Mago",
         nvl: 5,
     },
-    {   id: 3,
+    {   
         playerName: "Alisson",
         name: "Armin",
         classe: "Monge",
         nvl: 5,
     },
-    {   id: 4,
+    {   
         playerName: "Thiago",
         name: "Folium",
         classe: "Guerreiro",
@@ -32,8 +32,8 @@ let personagens = [
 
 ]
 
-function buscaPersonagemPeloNome(playerName) {
-    return personagens.findIndex(personagem => personagem.playerName === playerName)
+function buscaPersonagemPeloNome(name) {
+    return personagens.findIndex(personagem => personagem.name === name)
 }
     
 
@@ -46,8 +46,8 @@ app.get("/personagens", (req, res) => {
     res.status(200).send(personagens)
 })
 
- app.get("/personagens/:playerName", (req, res) => {
- res.status(200).send(personagens[(buscaPersonagemPeloNome(req.params.playerName))])
+ app.get("/personagens/:name", (req, res) => {
+ res.status(200).send(personagens[(buscaPersonagemPeloNome(req.params.name))])
  })
 
 app.post("/personagens", (req, res) => {
@@ -55,17 +55,24 @@ app.post("/personagens", (req, res) => {
     res.status(201).send(personagens)
 })
 
-app.put("/personagens/:playerName", (req, res)=> {
-    const player = buscaPersonagemPeloNome(req.params.playerName);
-    personagens[player].name = req.body.name;
-    res.status(200).send(personagens[player])
+app.put("/personagens/:name", (req, res)=> {
+    const index = buscaPersonagemPeloNome(req.params.name);
+    personagens[index] = { ...personagens[index], ...req.body };
+    res.status(200).send(personagens[index])
 })
+
+app.delete("/personagens/:name", (req, res) => {
+    const index = buscaPersonagemPeloNome(req.params.name);
+    personagens.splice(index, 1);
+    res.status(200).send(personagens);
+})
+    
 
 export default app;
 
-// {
-//     "playerName": "Matheus",
+//  {
+//      "playerName": "Matheus",
 //     "name": "tamandua",
 //     "classe": "bardo",
-//     "nvl": 3
-//   }
+//      "nvl": 3
+//    }
