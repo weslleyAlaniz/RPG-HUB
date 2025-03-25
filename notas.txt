@@ -1,0 +1,40 @@
+
+
+Database
+[
+  {
+    "nome": "Sebastian",
+    "raca": "Elfo",
+    "classe": "Feiticeiro",
+    "nvl": 20,
+    "nomeDeJogador": "Vinicius"
+  },
+  {
+    "nomeDeJogador": "Sayra",
+    "nome": "Silky",
+    "raca": "Tiefling",
+    "classe": "Ranger",
+    "nvl": 5
+  },
+  {
+    "nomeDeJogador": "Alisson",
+    "nome": "Armin",
+    "raca": "Elfo",
+    "classe": "Monge",
+    "nvl": 5
+  },
+  {
+    "nomeDeJogador": "Vinicius",
+    "nome": "Maco",
+    "raca": "Gnomo",
+    "classe": "Mago",
+    "nvl": 5
+  },
+  {
+    "nomeDeJogador": "Thiago",
+    "nome": "Folium",
+    "raca": "Humano",
+    "classe": "Guerreiro",
+    "nvl": 5
+  }
+]

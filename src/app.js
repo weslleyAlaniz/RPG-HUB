@@ -10,7 +10,7 @@ conexao.on("error", (err) => {
 });
 
 conexao.once("open", () => {
-    console.log("Conexãocom o banco feita com sucesso");
+    console.log("Conexão com o banco feita com sucesso");
     
 })
 
