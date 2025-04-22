@@ -18,7 +18,7 @@ Um sistema para armazenar e gerenciar os dados variáveis dos jogadores em uma m
 
 - **Front-end:** (A definir, ex: React, Vue.js)
 - **Back-end:** Node.js com Express
-- **Banco de Dados:** MongoDB (ou outro banco relacional, conforme necessidade)
+- **Banco de Dados:** MongoDB
 
 ## 📄 Contribuição
 
